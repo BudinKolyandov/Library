@@ -9,16 +9,16 @@
         ">
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="file:///C:/Users/Budin/Desktop/Library/Library/Images/AddBackground.jpg" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="AddBackground.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
         <TextBox x:Name="nameBox" HorizontalAlignment="Left" Height="23" Margin="146,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Background="Transparent" BorderThickness="2" BorderBrush="#FF08AEA6"/>
         <TextBlock x:Name="nameBlock" HorizontalAlignment="Left" Margin="30,78,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Height="23" Width="89"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="30,126,0,0" TextWrapping="Wrap" Text="Author" VerticalAlignment="Top" Height="23"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="146,126,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Background="Transparent" BorderThickness="2" BorderBrush="#FF08AEA6"/>
-        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="30,172,0,0" TextWrapping="Wrap" Text="Place in library" VerticalAlignment="Top" Height="23"/>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="146,172,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Background="Transparent" BorderThickness="2" BorderBrush="#FF08AEA6"/>
-        <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="30,217,0,0" TextWrapping="Wrap" Text="Given to" VerticalAlignment="Top" Height="23"/>
-        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="146,217,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Background="Transparent" BorderThickness="2" BorderBrush="#FF08AEA6"/>
+        <TextBlock x:Name="authorBlock" HorizontalAlignment="Left" Margin="30,126,0,0" TextWrapping="Wrap" Text="Author" VerticalAlignment="Top" Height="23"/>
+        <TextBox x:Name="authorBox" HorizontalAlignment="Left" Height="23" Margin="146,126,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Background="Transparent" BorderThickness="2" BorderBrush="#FF08AEA6"/>
+        <TextBlock x:Name="placeBlock" HorizontalAlignment="Left" Margin="30,172,0,0" TextWrapping="Wrap" Text="Place in library" VerticalAlignment="Top" Height="23"/>
+        <TextBox x:Name="placeBox" HorizontalAlignment="Left" Height="23" Margin="146,172,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Background="Transparent" BorderThickness="2" BorderBrush="#FF08AEA6"/>
+        <TextBlock x:Name="givenBlock" HorizontalAlignment="Left" Margin="30,217,0,0" TextWrapping="Wrap" Text="Given to" VerticalAlignment="Top" Height="23"/>
+        <TextBox x:Name="givenBox" HorizontalAlignment="Left" Height="23" Margin="146,217,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Background="Transparent" BorderThickness="2" BorderBrush="#FF08AEA6"/>
         <Button x:Name="button" Content="Add book" HorizontalAlignment="Center" Margin="96,365,96,0" VerticalAlignment="Top" Height="30" Width="100" Background="Transparent" Click="Button_Click" BorderThickness="0" Foreground="Black" FontSize="22" />
     </Grid>
 </Window>

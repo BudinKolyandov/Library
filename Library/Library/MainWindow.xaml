@@ -7,17 +7,10 @@
         mc:Ignorable="d"
         Title="Library" Height="500" Width="800">
     <Window.Background>
-        <ImageBrush ImageSource="file:///C:/Users/Budin/Desktop/Library/Library/Images/Background.jpg" Stretch="UniformToFill">
-            <ImageBrush.RelativeTransform>
-                <TransformGroup>
-                    <ScaleTransform CenterY="0.5" CenterX="0.5"/>
-                    <SkewTransform CenterY="0.5" CenterX="0.5"/>
-                    <RotateTransform CenterY="0.5" CenterX="0.5"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </ImageBrush.RelativeTransform>
-        </ImageBrush>
+        <ImageBrush ImageSource ="Background.jpg" />
     </Window.Background>
+
+
     <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Margin="80">
         <Button Background="Transparent" x:Name="AddBook" Content="Add book" HorizontalAlignment="Left" Width="150" Foreground="#FFFFFFFF" BorderBrush="Transparent" Height="50" FontSize="24" Click="AddBookClick"/>
         

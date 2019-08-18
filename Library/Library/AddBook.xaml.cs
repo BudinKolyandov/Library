@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,8 @@ namespace Library
     /// </summary>
     public partial class AddBook : Window
     {
+        private readonly DataRowBuilder rb;
+
         public AddBook()
         {
             InitializeComponent();
@@ -26,6 +29,7 @@ namespace Library
         
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+
 
         }
     }
