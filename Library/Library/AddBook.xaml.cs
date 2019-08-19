@@ -20,8 +20,6 @@ namespace Library
     /// </summary>
     public partial class AddBook : Window
     {
-        private readonly DataRowBuilder rb;
-
         public AddBook()
         {
             InitializeComponent();
@@ -29,7 +27,35 @@ namespace Library
         
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            string authorName = null;
+            string givenTo = null;
+            var bookName = nameBox.Text.ToString();
+            if (nameBox.ToString() != null)
+            {
+                authorName = authorBox.Text.ToString();
+            }
+            var placeInLibrary = placeBox.Text.ToString();
+            if (givenBox.ToString() != null)
+            {
+                givenTo = givenBox.Text.ToString();
+            }
 
+            using (LibraryDbEntites books = new LibraryDbEntites())
+            {
+                Book book = new Book()
+                {
+                    AuthorName = authorName,
+                    BookName = bookName,
+                    PlaceInLibrary = placeInLibrary,
+                    GivenTo = givenTo,
+                };
+                books.Books.Add(book);
+                
+                books.SaveChanges();
+            }
+
+
+            
 
         }
     }

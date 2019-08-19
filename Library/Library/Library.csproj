@@ -60,6 +60,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -93,6 +95,24 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Book.cs">
+      <DependentUpon>BooksTable.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BooksTable.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BooksTable.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BooksTable.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BooksTable.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BooksTable.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BooksTable.edmx</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -116,6 +136,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="BooksTable.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BooksTable.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="BooksTable.edmx.diagram">
+      <DependentUpon>BooksTable.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -135,6 +162,21 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BooksTable.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BooksTable.edmx</DependentUpon>
+      <LastGenOutput>BooksTable.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="BooksTable.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BooksTable.edmx</DependentUpon>
+      <LastGenOutput>BooksTable.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
