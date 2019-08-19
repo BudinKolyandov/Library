@@ -5,13 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
-        Title="Add book to Library" Height="450" Width="300
-        ">
+        Title="Add book to Library" Height="450" Width="300" MinWidth="300" MinHeight="450">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="AddBackground.jpg" Stretch="UniformToFill"/>
         </Grid.Background>
-        <TextBox x:Name="nameBox" HorizontalAlignment="Left" Height="23" Margin="146,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Background="Transparent" BorderThickness="2" BorderBrush="#FF08AEA6"/>
+        <TextBox x:Name="nameBox" HorizontalAlignment="Left" Height="23" Margin="146,78,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" BorderThickness="2" BorderBrush="#FF08AEA6">
+            <TextBox.Background>
+                <ImageBrush/>
+            </TextBox.Background>
+        </TextBox>
         <TextBlock x:Name="nameBlock" HorizontalAlignment="Left" Margin="30,78,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Height="23" Width="89"/>
         <TextBlock x:Name="authorBlock" HorizontalAlignment="Left" Margin="30,126,0,0" TextWrapping="Wrap" Text="Author" VerticalAlignment="Top" Height="23"/>
         <TextBox x:Name="authorBox" HorizontalAlignment="Left" Height="23" Margin="146,126,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Background="Transparent" BorderThickness="2" BorderBrush="#FF08AEA6"/>
@@ -19,6 +22,6 @@
         <TextBox x:Name="placeBox" HorizontalAlignment="Left" Height="23" Margin="146,172,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Background="Transparent" BorderThickness="2" BorderBrush="#FF08AEA6"/>
         <TextBlock x:Name="givenBlock" HorizontalAlignment="Left" Margin="30,217,0,0" TextWrapping="Wrap" Text="Given to" VerticalAlignment="Top" Height="23"/>
         <TextBox x:Name="givenBox" HorizontalAlignment="Left" Height="23" Margin="146,217,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Background="Transparent" BorderThickness="2" BorderBrush="#FF08AEA6"/>
-        <Button x:Name="button" Content="Add book" HorizontalAlignment="Center" Margin="96,365,96,0" VerticalAlignment="Top" Height="30" Width="100" Background="Transparent" Click="Button_Click" BorderThickness="0" Foreground="Black" FontSize="22" />
+        <Button x:Name="button" Content="Add book" HorizontalAlignment="Center" Margin="85,361,81,0" VerticalAlignment="Top" Height="30" Width="126" Background="Transparent" Click="Button_Click" BorderThickness="0" Foreground="Black" FontSize="22" />
     </Grid>
 </Window>

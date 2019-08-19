@@ -1,0 +1,18 @@
+﻿<Window x:Class="Library.FindBook"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Library"
+        mc:Ignorable="d"
+        Title="Find a book from the library" Height="300" Width="450">
+    <Grid Width="450" Height="270" MinWidth="450" MinHeight="270">
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\Budin\Desktop\Projects\Library\Library\Library\FindBackground.jpg" Stretch="Fill"/>
+        </Grid.Background>
+        <Button x:Name="button" Content="Find book" HorizontalAlignment="Left" Margin="282,21.96,0,0" VerticalAlignment="Top" Width="133" Height="38" FontSize="24" Background="Transparent" BorderThickness="0" Click="Button_Click"/>
+        <TextBox x:Name="BookName" GotFocus="BookName_GotFocus" Text="Book name" Margin="10,22,184,174" FontSize="18" Background="Transparent" BorderThickness="0" TextWrapping="Wrap" />
+        <TextBox x:Name="Result" HorizontalAlignment="Left" Height="80" Margin="68,113,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="288" Background="Transparent" BorderThickness="0" TextAlignment="Center"/>
+
+    </Grid>
+</Window>

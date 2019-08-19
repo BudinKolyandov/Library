@@ -34,7 +34,8 @@ namespace Library
 
         private void FindBookClick(object sender, RoutedEventArgs e)
         {
-
+            FindBook findBook = new FindBook();
+            findBook.ShowDialog();
         }
     }
 }
