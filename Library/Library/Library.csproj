@@ -93,6 +93,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BookModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BookModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Table.cs">
+      <DependentUpon>BookModel.tt</DependentUpon>
+    </Compile>
     <Page Include="AddBook.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -112,23 +120,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Book.cs">
-      <DependentUpon>BooksTable.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BooksTable.Context.cs">
+    <Compile Include="BookModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BooksTable.Context.tt</DependentUpon>
+      <DependentUpon>BookModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="BooksTable.cs">
+    <Compile Include="BookModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BooksTable.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BooksTable.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BooksTable.edmx</DependentUpon>
+      <DependentUpon>BookModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="FindBook.xaml.cs">
       <DependentUpon>FindBook.xaml</DependentUpon>
@@ -156,12 +156,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="BooksTable.edmx">
+    <EntityDeploy Include="BookModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BooksTable.Designer.cs</LastGenOutput>
+      <LastGenOutput>BookModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="BooksTable.edmx.diagram">
-      <DependentUpon>BooksTable.edmx</DependentUpon>
+    <None Include="BookModel.edmx.diagram">
+      <DependentUpon>BookModel.edmx</DependentUpon>
     </None>
     <None Include="Library_TemporaryKey.pfx" />
     <None Include="packages.config" />
@@ -188,17 +188,26 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BooksTable.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BooksTable.edmx</DependentUpon>
-      <LastGenOutput>BooksTable.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="BooksTable.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BooksTable.edmx</DependentUpon>
-      <LastGenOutput>BooksTable.cs</LastGenOutput>
-    </Content>
     <Resource Include="FindBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BookModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BookModel.edmx</DependentUpon>
+      <LastGenOutput>BookModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="BookModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BookModel.edmx</DependentUpon>
+      <LastGenOutput>BookModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataBase.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DataBase_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>DataBase.mdf</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

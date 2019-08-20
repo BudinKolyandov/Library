@@ -27,8 +27,8 @@ namespace Library
         
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string authorName = null;
-            string givenTo = null;
+            string authorName = string.Empty;
+            string givenTo = string.Empty;
             var bookName = nameBox.Text.ToString();
             if (nameBox.ToString() != null)
             {
@@ -40,22 +40,60 @@ namespace Library
                 givenTo = givenBox.Text.ToString();
             }
 
-            using (LibraryDbEntites books = new LibraryDbEntites())
+            using (LibraryDbEntities books = new LibraryDbEntities())
             {
-                Book book = new Book()
+
+
+                if (bookName == "" || placeInLibrary == "")
                 {
-                    AuthorName = authorName,
-                    BookName = bookName,
-                    PlaceInLibrary = placeInLibrary,
-                    GivenTo = givenTo,
-                };
-                books.Books.Add(book);
-                
-                books.SaveChanges();
+                    MessageBox.Show("You have to type the name of the book and it's place in the library", "Error", MessageBoxButton.OK);
+                    InitializeComponent();
+                }
+        
+                    
+                else
+                {
+                    if (bookName.Length > 150)
+                    {
+                        MessageBox.Show("The name of the book can not be more than 150 characters", "Error", MessageBoxButton.OK);
+                        InitializeComponent();
+                    }
+                    else if (authorName.Length > 100)
+                    {
+                        MessageBox.Show("The name of the author can not be more than 100 characters", "Error", MessageBoxButton.OK);
+                        InitializeComponent();
+                    }
+                    else if (placeInLibrary.Length > 100)
+                    {
+                        MessageBox.Show("The place in the library can not be more than 100 characters", "Error", MessageBoxButton.OK);
+                        InitializeComponent();
+                    }
+                    else if (givenTo.Length > 100)
+                    {
+                        MessageBox.Show("The name of the person that the books is given to can not be more than 100 characters", "Error", MessageBoxButton.OK);
+                        InitializeComponent();
+                    }
+                    else
+                    {
+                        Table book = new Table()
+                        {
+                            AuthorName = authorName,
+                            BookName = bookName,
+                            PlaceInLibrary = placeInLibrary,
+                            GivenTo = givenTo,
+                        };
+                        books.Tables.Add(book);
+
+                        books.SaveChanges();
+                    }
+                    
+                    
+                }                
             }
-
-
-            
+            nameBox.Text = string.Empty;
+            authorBox.Text = string.Empty;
+            placeBox.Text = string.Empty;
+            givenBox.Text = string.Empty;
 
         }
     }

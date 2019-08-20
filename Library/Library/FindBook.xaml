@@ -5,14 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
-        Title="Find a book from the library" Height="300" Width="450">
+        Title="Find a book from the library" Height="450" Width="720" MinWidth="720" MinHeight="450">
+    <Window.Background>
+        <ImageBrush ImageSource="C:\Users\Budin\Desktop\Projects\Library\Library\Library\FindBackground.jpg" Stretch="Fill"/>
+    </Window.Background>
     <Grid Width="450" Height="270" MinWidth="450" MinHeight="270">
-        <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\Budin\Desktop\Projects\Library\Library\Library\FindBackground.jpg" Stretch="Fill"/>
-        </Grid.Background>
-        <Button x:Name="button" Content="Find book" HorizontalAlignment="Left" Margin="282,21.96,0,0" VerticalAlignment="Top" Width="133" Height="38" FontSize="24" Background="Transparent" BorderThickness="0" Click="Button_Click"/>
-        <TextBox x:Name="BookName" GotFocus="BookName_GotFocus" Text="Book name" Margin="10,22,184,174" FontSize="18" Background="Transparent" BorderThickness="0" TextWrapping="Wrap" />
-        <TextBox x:Name="Result" HorizontalAlignment="Left" Height="80" Margin="68,113,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="288" Background="Transparent" BorderThickness="0" TextAlignment="Center"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="177*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="91*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="29*"/>
+            <ColumnDefinition Width="46*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="button" Content="Find book" HorizontalAlignment="Left" Margin="108,-18,0,0" VerticalAlignment="Top" Width="133" Height="74" FontSize="22" Background="Transparent" BorderThickness="0" Click="Button_Click" Foreground="White" Grid.Column="1"/>
+        <TextBox x:Name="BookName" GotFocus="BookName_GotFocus" Text="Book name" Margin="10,-18,184,109" FontSize="20" Background="Transparent" BorderThickness="0" TextWrapping="Wrap" Foreground="White" Grid.ColumnSpan="2" KeyDown="OnKeyDownHandler"/>
+        <TextBox x:Name="Result" HorizontalAlignment="Left" Height="79" Margin="40,73,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="342" Background="Transparent" BorderThickness="0" TextAlignment="Center" Foreground="White" FontSize="16" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="GiveTo" GotFocus="GiveTo_GotFocus" HorizontalAlignment="Left" Height="55" Margin="10,55,0,-19" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="256" Background="Transparent" BorderThickness="0" Grid.ColumnSpan="2" FontSize="18" Foreground="White" Grid.Row="2"/>
+        <Button x:Name="GiveButton" Visibility="Hidden" Content="" Grid.Column="1" HorizontalAlignment="Left" Margin="108,55,0,-19" VerticalAlignment="Top" Width="133" Height="55" Background="Transparent" BorderThickness="0" FontSize="18" Foreground="White" Click="Button1_Click" Grid.Row="2"/>
+        <Button x:Name="TakeBack" Visibility="Hidden" Content="" HorizontalAlignment="Left" Margin="88,166,0,0" VerticalAlignment="Top" Width="245" Grid.ColumnSpan="2" Height="51" Grid.RowSpan="3" Background="Transparent" BorderThickness="0" FontSize="18" Foreground="White" Click="TakeBack_Click"/>
 
     </Grid>
 </Window>
